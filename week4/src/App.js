@@ -1,19 +1,19 @@
-import './App.css';
 import React from 'react';
-import {Routes, Route, Link, useNavigate} from 'react-router-dom';
-import Welcome from './component/Welcome';
-import About from './component/About';
-import Nav from './component/Nav';
-function App() {
-  return (
-    <div className="App">
-      <Nav/>
-        <Routes>
-          <Route path="/" element={<Welcome />}/>
-          <Route path="/about" element={<About ment="About"/>}/>
-        </Routes>
-    </div>
-  );
-}
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Header from './Header';
+import Main from './Main';
+import Product from './Product';
+
+const App = () => {
+   return (
+      <div className='App'>
+            <Header />
+            <Routes>
+               <Route path="/" element={<Main />}></Route>
+                <Route path="/product*" element={<Product />}></Route>
+            </Routes>
+      </div>
+   );
+};
 
 export default App;
